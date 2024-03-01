@@ -5,6 +5,8 @@ from rest_framework import status
 from django.contrib.auth.hashers import make_password
 from .serializers import SignUpSerializers, UserSerializer
 from django.contrib.auth.models import User
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import permission_classes
 
 # Create your views here.
 
@@ -31,3 +33,10 @@ def register(request):
             return Response({'Error': 'User already exists'}, status=status.HTTP_400_BAD_REQUEST)
     else:
         return Response(user.errors)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def currentUser(request):
+    user = UserSerializer(request.user)
+    
+    return Response(user.data)
