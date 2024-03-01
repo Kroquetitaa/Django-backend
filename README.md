@@ -21,6 +21,10 @@
 19. Vamos a instalar `psycopg2-binary` -> que es una distribución binaria de la biblioteca psycopg2, que es un adaptador de base de datos PostgreSQL para el lenguaje de programación Python. Esta distribución binaria se utiliza para facilitar la instalación de psycopg2 sin necesidad de compilar el código fuente.
 20.  Vamos a instalar `python-dotenv` -> que se utiliza para cargar variables de entorno desde un archivo .env
 
+EXPORTAR siempre estas dos librerias antes de ejecutar servidor porque siempre da fallos:
+export GDAL_LIBRARY_PATH=/opt/homebrew/lib/libgdal.dylib
+export GEOS_LIBRARY_PATH=/opt/homebrew/lib/libgeos_c.dylib
+
 Lo siguiente que tenemos que hacer es configurar nuestro archivo settings.py ir a DATABASES = {} y añadir nuestra bbdd en mi caso POSTGRESQL
 
 Un ejemplo seria: 
