@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     "storages",
     'django.contrib.gis',
     'django_filters',
-    
+
     'job.apps.JobConfig',
 ]
 
